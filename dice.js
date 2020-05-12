@@ -4,22 +4,22 @@ function getRandomInt(min, max) {
 }
 
 module.exports = {
-    rollD20: function() {
-        return getRandomInt(1,20);
-    },
-    rollD12: function() {
-        return getRandomInt(1,12);
-    },
-    rollD10: function() {
-        return getRandomInt(1,10);
-    },
-    rollD8: function() {
-        return getRandomInt(1,8);
-    },
-    rollD6: function() {
-        return getRandomInt(1,6);
-    },
-    rollD4: function() {
-        return getRandomInt(1,4);
-    }
+  rollD20: function() {
+    return getRandomInt(1,20);
+  },
+  rollD12: function() {
+    return getRandomInt(1,12);
+  },
+  rollD10: function() {
+    return getRandomInt(1,10);
+  },
+  rollD8: function() {
+    return getRandomInt(1,8);
+  },
+  rollD6: function() {
+    return getRandomInt(1,6);
+  },
+  rollD4: function() {
+    return getRandomInt(1,4);
+  }
 }
