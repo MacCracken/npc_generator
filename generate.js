@@ -47,5 +47,5 @@ function characterGenerateConsoled(character) {
 }
 
 
-char = createCharacter();
+var char = createCharacter();
 characterGenerateConsoled(char);
