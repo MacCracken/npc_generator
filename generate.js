@@ -12,7 +12,7 @@ function createCharacter() {
   var last = parse('last.json');
   var first_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
   var last_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
-  
+
   // Capitalizes First Character
   first_name = first_name.charAt(0).toUpperCase() + first_name.slice(1); 
   last_name = last_name.charAt(0).toUpperCase() + last_name.slice(1); 
@@ -49,7 +49,7 @@ function logHeader(){
   logLine();
 }
 
-function characterGenerateConsoled(character) {
+function clogged(character) {
   console.log("Name: " + character["Name"]);
   console.log("Characteristics: " + character["Characteristics"]);
   console.log("Ideals: " + character["Ideals"]);
@@ -64,6 +64,6 @@ var switcher = args[2] || 1;
 var x = 0;
 while (x < switcher) {
   var char = createCharacter();
-  characterGenerateConsoled(char);
+  clogged(char);
   x += 1;
 }
