@@ -12,6 +12,10 @@ function createCharacter() {
   var last = parse('last.json');
   var first_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
   var last_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
+  
+  // Capitalizes First Character
+  first_name = first_name.charAt(0).toUpperCase() + first_name.slice(1); 
+  last_name = last_name.charAt(0).toUpperCase() + last_name.slice(1); 
 
   // Characteristics
   var chars = parse('characteristics.json');
