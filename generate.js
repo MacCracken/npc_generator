@@ -63,7 +63,6 @@ var args = process.argv;
 var switcher = args[2] || 1;
 var x = 0;
 while (x < switcher) {
-  var char = createCharacter();
-  clogged(char);
+  clogged(createCharacter());
   x += 1;
 }
