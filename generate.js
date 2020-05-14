@@ -35,17 +35,31 @@ function createCharacter() {
   return character
 }
 
-function characterGenerateConsoled(character) {
+function logLine(){
   console.log("--------------------------")
-  console.log("D&D 5E NPC Generator v 1.1")
+}
+
+function logHeader(){
+  logLine();
+  console.log("D&D 5E NPC Generator v 1.1");
+  logLine();
+}
+
+function characterGenerateConsoled(character) {
   console.log("Name: " + character["Name"]);
   console.log("Characteristics: " + character["Characteristics"]);
   console.log("Ideals: " + character["Ideals"]);
   console.log("Bonds: " + character["Bonds"]);
   console.log("Flaws: " + character["Flaws"]);
-  console.log("--------------------------")
+  logLine();
 }
 
-
-var char = createCharacter();
-characterGenerateConsoled(char);
+logHeader();
+var args = process.argv;
+var switcher = args[2] || 1;
+var x = 0;
+while (x < switcher) {
+  var char = createCharacter();
+  characterGenerateConsoled(char);
+  x += 1;
+}
