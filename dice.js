@@ -1,25 +1,23 @@
 // Random Int Generator and Dice Types
 function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-module.exports = {
-  rollD20: function() {
-    return getRandomInt(1,20);
-  },
-  rollD12: function() {
-    return getRandomInt(1,12);
-  },
-  rollD10: function() {
-    return getRandomInt(1,10);
-  },
-  rollD8: function() {
-    return getRandomInt(1,8);
-  },
-  rollD6: function() {
-    return getRandomInt(1,6);
-  },
-  rollD4: function() {
-    return getRandomInt(1,4);
-  }
+export function rollD20() {
+  return getRandomInt(1, 20);
+}
+export function rollD12() {
+  return getRandomInt(1, 12);
+}
+export function rollD10() {
+  return getRandomInt(1, 10);
+}
+export function rollD8() {
+  return getRandomInt(1, 8);
+}
+export function rollD6() {
+  return getRandomInt(1, 6);
+}
+export function rollD4() {
+  return getRandomInt(1, 4);
 }

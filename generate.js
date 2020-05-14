@@ -1,22 +1,27 @@
 // Returns a random integer between min (included) and max (included)
-const dice = require('./dice');
-var fs=require('fs');
-var ideals=JSON.parse(fs.readFileSync('ideals.json'));
-var chars=JSON.parse(fs.readFileSync('characteristics.json'));
-var bonds=JSON.parse(fs.readFileSync('bonds.json'));
-var flaws=JSON.parse(fs.readFileSync('flaws.json'));
-var first=JSON.parse(fs.readFileSync('first.json'));
-var middle=JSON.parse(fs.readFileSync('middle.json'));
-var last=JSON.parse(fs.readFileSync('last.json'));
-var first_name = first[dice.rollD20()] + middle[dice.rollD20()] + last[dice.rollD20()];
-var last_name = first[dice.rollD20()] + middle[dice.rollD20()] + last[dice.rollD20()];
+import { rollD20, rollD10, rollD12 } from './dice.js';
+import { readFileSync } from 'fs';
+
+function parse(filename) {
+  return JSON.parse(readFileSync(filename))
+}
+
+var ideals=parse('ideals.json');
+var chars=parse('characteristics.json');
+var bonds=parse('bonds.json');
+var flaws=parse('flaws.json');
+var first=parse('first.json');
+var middle=parse('middle.json');
+var last=parse('last.json');
+var first_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
+var last_name = first[rollD20()] + middle[rollD20()] + last[rollD20()];
 
 var npc_character = new Object();
 npc_character["Name"] = first_name + " " + last_name;
-npc_character["Characteristics"] = chars[dice.rollD20()];
-npc_character["Ideals"] = ideals[dice.rollD20()];
-npc_character["Bonds"] = bonds[dice.rollD10()];
-npc_character["Flaws"] = flaws[dice.rollD12()];
+npc_character["Characteristics"] = chars[rollD20()];
+npc_character["Ideals"] = ideals[rollD20()];
+npc_character["Bonds"] = bonds[rollD10()];
+npc_character["Flaws"] = flaws[rollD12()];
 
 
 console.log("--------------------------")
